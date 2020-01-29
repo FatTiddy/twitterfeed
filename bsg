@@ -1,0 +1,11 @@
+final TwitterTextParseResults result = TwitterTextParser.parseTweet
+// result.weightedLength == 192
+// result.permillage == 685
+// result.isValid == true
+// result.displayTextRange == 0-210
+// result.validTextRange == 0-210
+final Extractor extractor = new Extractor();
+final List<String> urls = extractor.extractURLs 
+final Autolink autolinker = new Autolink();
+final String linkedText = autolinker.autoLink("@twitter #lovetwitter $TWTR");
+// linkedText == "@<a class="tweet-url username" href="https://twitter.com/twitter" rel="nofollow">twitter</a> <a href="https://twitter.com/search?q=%23lovetwitter" title="#lovetwitter" class="tweet-url hashtag" rel="nofollow">#lovetwitter</a> <a href="https://twitter.com/bstategames" title="$TWTR" class="tweet-url cashtag" rel="nofollow">$TWTR</a>"
